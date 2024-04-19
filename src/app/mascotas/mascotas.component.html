@@ -1,0 +1,25 @@
+<h1>Heroes <span>Marvel</span> y <span>DC</span></h1>
+<div class="card-group row row-cols-1 row-cols-lg-3 g-4">
+    @for (m of array; track m; let i=$index) {
+        <div class="col">
+            <div class="card" style="width: 23rem; height: 45rem;">
+                <!-- <img src="{{m.img}}" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h5 class="card-title">{{m.raza}}</h5>
+                  <p class="card-text">{{m.color}}</p>
+                  <p class="card-text">{{m.tiempo}}</p>
+                  <p class="card-text">{{m.descrip}}</p>
+                  <p class="card-text"><small class="text-muted">{{m.edad}}</small></p>
+                  <a class="btn btn-primary"  [routerLink]="['/mascota',i]">Ver más</a>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- edad: string;
+    color: string;
+    raza: string;
+    tiempo: string; 
+    descrip: string;
+    img: string;  -->
+</div>
