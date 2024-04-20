@@ -1,0 +1,14 @@
+nav {
+    margin-bottom: 0;
+}
+.menu {
+    background-color: #072724;
+    color: white;
+}
+.buscar {
+    color: white;
+    background-color: #4b744e;
+}
+.nav-link {
+    color: white !important;
+}
