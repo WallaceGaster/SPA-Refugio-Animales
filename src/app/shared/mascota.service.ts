@@ -14,6 +14,11 @@ export class MascotaService {
   retornar() {
     return this.http.get(this.urlAPI).pipe(take(1));
   }
+
+  getUnaMascota(posicion: number){
+
+  }
+
 }
 
 
