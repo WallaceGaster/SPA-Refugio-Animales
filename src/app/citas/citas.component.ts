@@ -33,16 +33,22 @@ import { FocusMonitor } from '@angular/cdk/a11y';
 export class CitasComponent {
 
   mascota!:Mascota;
+  
   name:string="";
+  telefono:number=0;
+  correo:string="";
+
   email = new FormControl('', [Validators.required, Validators.email]);
   errorMessage = '';
   Fecha = new Date();
   FechaActual:string="";
+  fechaCita = new Date();
   Hora:string="";
 
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
     secondCtrl: ['', [Validators.required, Validators.email]],
+    fourthCtrl: ['', [Validators.required, Validators.maxLength(10)]],
   });
   secondFormGroup = this._formBuilder.group({
     thirdCtrl: ['', Validators.required],
@@ -51,7 +57,7 @@ export class CitasComponent {
 
   constructor(public mascotaService:MascotaService, public activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder){
     this.activatedRoute.params.subscribe(params => {
-    /*this.mascota=mascotaService.getUnaMascota(params['id']);*/
+    this.mascota=mascotaService.getUnaMascota(params['id']);
     })
     this.FechaActual = this.Fecha.getDate() + " / " + (this.Fecha.getMonth()+1) + " / " + this.Fecha.getFullYear();
     let hour = this.Fecha.getHours();
@@ -82,4 +88,7 @@ export class CitasComponent {
     // Prevent Saturday and Sunday from being selected.
     return (day > ayer && month === mes && year === anio) || (month > mes && year === anio) || (year > anio);
   };
+  obtenerFecha(){
+
+  }
 }

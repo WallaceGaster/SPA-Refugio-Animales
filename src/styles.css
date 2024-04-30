@@ -6,16 +6,8 @@ body {
     margin: 0; 
     height: 100%;
 }
-<<<<<<< HEAD
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-=======
 html { height: 100%; }
 /* body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
 } */
->>>>>>> ec75d7bfaa5c5f78de24d4342d69a398ab129986
