@@ -14,6 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 import { FocusMonitor } from '@angular/cdk/a11y';
+import { Cita } from '../shared/cita.model';
+import { CitasService } from '../shared/citas.service';
 
 @Component({
   selector: 'app-citas',
@@ -33,7 +35,8 @@ import { FocusMonitor } from '@angular/cdk/a11y';
 export class CitasComponent {
 
   mascota!:Mascota;
-  
+  cita!:Cita;
+
   name:string="";
   telefono:number=0;
   correo:string="";
@@ -55,7 +58,7 @@ export class CitasComponent {
   });
   isLinear = true;
 
-  constructor(public mascotaService:MascotaService, public activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder){
+  constructor(public mascotaService:MascotaService, public activatedRoute: ActivatedRoute, private _formBuilder: FormBuilder, private citasService: CitasService){
     this.activatedRoute.params.subscribe(params => {
     this.mascota=mascotaService.getUnaMascota(params['id']);
     })
@@ -67,6 +70,9 @@ export class CitasComponent {
     merge(this.email.statusChanges, this.email.valueChanges)
     .pipe(takeUntilDestroyed())
     .subscribe(() => this.updateErrorMessage());
+  }
+  ngOnInit(){
+    this.cita = this.citasService.nuevaCita();
   }
   updateErrorMessage() {
     if (this.email.hasError('required')) {
@@ -88,7 +94,15 @@ export class CitasComponent {
     // Prevent Saturday and Sunday from being selected.
     return (day > ayer && month === mes && year === anio) || (month > mes && year === anio) || (year > anio);
   };
-  obtenerFecha(){
-
+  GuardarLocalStorage(){
+    this.cita.Nombre = this.name;
+    this.cita.FechaActual = this.FechaActual;
+    this.cita.Hora = this.Hora;
+    this.cita.Correo = this.correo;
+    this.cita.Mascota = this.mascota;
+    this.cita.Telefono = this.telefono;
+    this.cita.FechaCita = this.fechaCita;
+    this.citasService.agregarCita(this.cita);
+    this.cita = this.citasService.nuevaCita();
   }
 }
