@@ -1,35 +1,55 @@
+
+.flecha {
+  background-color: rgb(145, 231, 87);
+  width: 100px;
+  height: 640px;
+}
+
+.especif {
+  color: black;
+  border: none;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  height: 50px;
+  background: rgb(209, 208, 207);
+  width: 50px;
+}
+
 .example-card {
   max-width: 400px;
+  max-height: 900px;
 }
 
 .example-header-image {
-  background-image: url('../../assets/img/about-Bryan.png');
+  background-image: url("../../assets/img/about-Bryan.jpeg");
   background-size: cover;
 }
 
 .example-header-image2 {
-  background-image: url('../../assets/img/about-Gustavo.png');
+  background-image: url("../../assets/img/about-Gustavo.jpeg");
   background-size: cover;
 }
 
 .example-header-image3 {
-  background-image: url('../../assets/img/about-Naomi.png');
+  background-image: url("../../assets/img/about-Naomi.jpeg");
   background-size: cover;
 }
 
 .example-header-image4 {
-  background-image: url('../../assets/img/about-Pedro.png');
+  background-image: url("../../assets/img/about-Pedro.jpeg");
   background-size: cover;
 }
 
 .example-header-image5 {
-  background-image: url('../../assets/img/about-Veloz.png');
+  background-image: url("../../assets/img/about-Veloz.png");
   background-size: cover;
 }
 
 body {
-  background-color: #f0f9f4; 
-  font-family: 'Arial', sans-serif; 
+  font-family: "Arial", sans-serif;
 }
 
 .contenedor {
@@ -39,11 +59,19 @@ body {
   gap: 20px;
 }
 
+.contenedor > div {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 .card {
   width: 300px;
-  background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+.example-card {
+  border: 1px solid gray;
+  box-shadow: 10px 10px 0px 0px rgba(184,184,184,1);
 }
 
 .card-header {
@@ -55,7 +83,7 @@ body {
 .avatar {
   width: 60px;
   height: 60px;
-  background-color: #4caf50; /* Color verde fuerte */
+  background-color: #4caf50;
   border-radius: 50%;
   margin-right: 15px;
 }
@@ -80,15 +108,68 @@ body {
   padding: 10px;
 }
 
-button {
-  background-color: #4caf50; /* Color verde fuerte */
+.redes {
+  background-color: #314d32; 
   color: #fff;
   border: none;
   padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
+  margin: 20px;
+  width: auto;
+  height: auto;
 }
 
-button:hover {
-  background-color: #388e3c; /* Color verde más oscuro al pasar el ratón */
+.redes:hover {
+  
+}
+
+.blan{
+  color: #fff;
+}
+
+.descripcion{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: rgb(80, 64, 50);
+  text-align: justify;
+  font-size: smaller;
+}
+
+
+.sobre {
+  background-color: #f0f9f4; 
+  padding: 20px; 
+  margin: 20px auto; 
+  max-width: 400px; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre h1 {
+  color: #314d32;
+  font-size: 2.5rem; 
+  margin-bottom: 20px; 
+}
+
+.sobre p {
+  color: #505032; 
+  font-size: 1.1rem; 
+  line-height: 1.6; 
+  margin-bottom: 15px; 
+  text-align: justify;
+}
+
+.sobre hr {
+  border-color: #ccc; 
+  margin: 30px 0; 
+}
+
+.frase{
+  font-style: oblique;
+}
+
+.action{
+  margin: auto 0;
 }
