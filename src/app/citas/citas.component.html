@@ -1,0 +1,83 @@
+<br>
+<div class="container">
+    <div class="card mb-3" style="max-width: 80%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{this.mascota.img}}" class="img-fluid rounded-start imagen" width="100%" height="100%">
+            </div>
+            <div class="col-md-8" style="height: 450px;">
+                <div class="card-body">
+                    <h5 class="card-title">Registrar una cita para {{this.mascota.raza}}</h5>
+                    <p class="card-text text-body-secondary">Fecha de hoy: {{FechaActual}} Hora: {{Hora}}</p>
+                    <p class="card-text">
+                        <mat-stepper [linear]="isLinear" #stepper>
+                            <mat-step [stepControl]="firstFormGroup">
+                                <form [formGroup]="firstFormGroup">
+                                    <ng-template matStepLabel>Datos personales</ng-template>
+                                    <mat-form-field>
+                                        <mat-label>Nombre</mat-label>
+                                        <input matInput placeholder="Nombre completo" formControlName="firstCtrl"
+                                            [(ngModel)]="name" required>
+                                        <mat-icon matSuffix>account_circle</mat-icon>
+                                    </mat-form-field>
+                                    <br>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Télefono</mat-label>
+                                        <input matInput type="number" formControlName="fourthCtrl"
+                                            placeholder="Ingresa su número télefonico" [(ngModel)]="telefono" required>
+                                        <mat-icon matSuffix>phone</mat-icon>
+                                        <mat-hint>Teléfono</mat-hint>
+                                    </mat-form-field>
+                                    <br>
+                                    <mat-form-field>
+                                        <mat-label>Ingrese su correo</mat-label>
+                                        <input matInput placeholder="correo@ejemplo.com" formControlName="secondCtrl"
+                                            (blur)="updateErrorMessage()" [(ngModel)]="correo" required>
+                                        <mat-icon matSuffix>email</mat-icon>
+                                        @if (email.invalid) {
+                                        <mat-error>{{errorMessage}}</mat-error>
+                                        }
+                                    </mat-form-field>
+                                    <div>
+                                        <button mat-button matStepperNext>Siguiente</button>
+                                    </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="secondFormGroup" label="Elige una fecha para la cita">
+                                <form [formGroup]="secondFormGroup">
+                                    <br>
+                                    <mat-form-field>
+                                        <mat-label>Elige una fecha</mat-label>
+                                        <input matInput formControlName="thirdCtrl" [matDatepickerFilter]="myFilter"
+                                            [matDatepicker]="picker" [(ngModel)]="fechaCita" required>
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                    <br>
+                                    <div>
+                                        <button mat-button matStepperPrevious>Atrás</button>
+                                        <button mat-button matStepperNext>Siguiente</button>
+                                    </div>
+                                </form>
+                            </mat-step>
+                            <mat-step>
+                                <ng-template matStepLabel>Confirmación</ng-template>
+                                <p>Presione el siguiente botón para confirmar su cita</p>
+                                <p>Fecha actual: {{this.FechaActual}}</p>
+                                <p>Hora: {{this.Hora}}</p>
+                                <p>Nombre: {{this.name}}</p>
+                                <p>Teléfono: {{this.telefono}}</p>
+                                <p>Correo Electronico: {{this.correo}}</p>
+                                <p>Fecha de la cita: {{this.fechaCita.toLocaleDateString("es-MX")}}</p>
+                                <div>
+                                    <button mat-button matStepperPrevious>Back</button>
+                                    <button mat-button (click)="stepper.reset()">Reset</button>
+                                </div>
+                            </mat-step>
+                        </mat-stepper>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

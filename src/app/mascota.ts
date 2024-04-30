@@ -4,5 +4,5 @@ export interface Mascota {
     raza: string;
     tiempo: string; 
     descrip: string;
-    img: string; 
+    img: string;
 }
