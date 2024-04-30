@@ -113,12 +113,25 @@ section.hero{
     display: flex;
     flex-direction: row;
 }
+.fila1 div {
+    width: 50%;
+    padding: 30px;
+}
+.fila1 h3 {
+    color: #ffffff;
+}
+.fila1 p {
+    color: #c2c5c2;
+}
+.fila1 img {
+    width: 60px;
+}
 .tipose-servicios {
-    width: 70%;
-    background: #f1d684;
+    width: 60%;
+    /* background: #f1d684; */
 }
 .apartado>div+div {
-    width: 30%;
+    width: 40%;
 }
 .apartado img {
     object-fit: cover;
