@@ -98,3 +98,40 @@
         </div>
     </div>
 </section>
+
+<section class="productos">
+    <div class="contenedor-productos">
+        <h1>LAS MEJORES MARCAS DE ALIMENTO PARA PERRO, SEGÚN PROFECO </h1>
+
+        @if(productosService.productos.length > 0) {
+            <table class="table table-stripted table-hover">
+
+                <thead>
+                    <th>Marca</th>
+                    <th>ROYAL CANIN MEDIUM</th>
+                    <th>Hukanuba</th>
+                    <th>ROYAL CANIN MAXI</th>
+                    <th>PRO PLAN PURINA</th>
+                    <th>Prairie Nature's Varlety</th>
+                </thead>
+
+                <tbody>
+                    @for(producto of productosService.productos; track producto) {
+                        <tr>
+                            <th>{{producto.titulo}}</th>
+                            <td>{{producto.marca1}}</td>
+                            <td>{{producto.marca2}}</td>
+                            <td>{{producto.marca3}}</td>
+                            <td>{{producto.marca4}}</td>
+                            <td>{{producto.marca5}}</td>
+                        </tr>
+                    }                 
+                </tbody>
+
+            </table>
+        }
+        @else {
+            <p>No hay productos</p>
+        }
+    </div>  
+</section>

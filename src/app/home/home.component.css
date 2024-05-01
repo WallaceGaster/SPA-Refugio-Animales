@@ -124,3 +124,14 @@ section.hero{
     object-fit: cover;
     width: 100%;
 }
+
+.contenedor-productos {
+    margin: 0 auto;
+    width: 92%;
+
+    margin-top: 5%;
+}
+
+th, td {
+    text-align: center !important;
+}
