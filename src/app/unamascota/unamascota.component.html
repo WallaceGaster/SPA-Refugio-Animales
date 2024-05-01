@@ -1,0 +1,22 @@
+<div class="contenedor">
+    <!-- <h1 class="animate__animated animate__backInDown">{{heroe.nombre}} <span> {{heroe.aparicion}}</span></h1> -->
+    <br>
+    <div class="card mb-3">
+        <div class="row g-0">
+        <div class="col-md-4 imagen">
+            <img src="{{mascota.img}}" class="img-fluid rounded-start" alt="..." width="300px">
+            <br>
+            <a [routerLink]="['/mascotas']" class="btn btn-outline-primary btn-block">Regresar</a>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{mascota.nombre}}</h5>
+                  <p class="card-text">{{mascota.raza}}, {{mascota.color}}</p>
+                  <p class="card-text">{{mascota.descrip}}</p>
+                  <p class="card-text">{{mascota.edad}}</p>
+                <p class="card-text"><small class="text-body-secondary">{{mascota.tiempo}}</small></p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

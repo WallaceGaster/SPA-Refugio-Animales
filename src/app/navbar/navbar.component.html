@@ -22,9 +22,9 @@
             <a class="nav-link" [routerLink]="['/citas']">Citas</a>
           </li>
         </ul>
-        <div id="buscoheroe" class="d-flex">
-          <input class="form-control me-2" type="text" placeholder="Buscar" #buscarTexto>
-          <button class="btn buscar" type="button">Buscar</button>
+        <div id="buscomascota" class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Buscar" #buscarTexto (keyup.enter)="buscarMascotas(buscarTexto.value)">
+          <button class="btn buscar" (click)="buscarMascotas(buscarTexto.value)" type="button">Buscar</button>
         </div>
       </div>
     </div>

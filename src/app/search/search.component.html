@@ -1,0 +1,12 @@
+@if (indice==-1) {
+    <div class="animate__animated animate__headShake text-center">
+        <div>
+            <div class="alert alert-danger" role="alert">
+                No existen resultados de {{nombrem}}
+            </div>
+        </div>
+    </div>
+} @else {
+    <br><br><br>
+    <app-unamascota [mascota]="mimascota"></app-unamascota>
+}

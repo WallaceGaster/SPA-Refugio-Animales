@@ -1,0 +1,17 @@
+h1 {
+    color: white;
+}
+.contenedor {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.card {
+    padding: 40px;
+}
+.imagen {
+    text-align: center;
+}
+.imagen img {
+    margin-bottom: 30px;
+}
