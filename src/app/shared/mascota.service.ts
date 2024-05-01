@@ -7,7 +7,7 @@ import { Mascota } from '../mascota';
   providedIn: 'root',
 })
 export class MascotaService {
-  urlAPI: string = 'https://mascotas-1.free.beeceptor.com/todos';
+  urlAPI: string = 'https://mascotas-3.free.beeceptor.com/todos';
   arreglo: Mascota[] = [];
 
   constructor(private http: HttpClient) {}
@@ -30,5 +30,10 @@ export class MascotaService {
     console.log("data",data);
     this.arreglo = data.mascotas; 
     console.log("array",this.arreglo);
+  }
+
+  searchMascota(nommas:string):number{
+    let index = this.arreglo.findIndex(p=> p.nombre == nommas);
+    return index;
   }
 }

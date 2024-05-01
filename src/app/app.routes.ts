@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { MascotasComponent } from './mascotas/mascotas.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { CitasComponent } from './citas/citas.component';
+import { SearchComponent } from './search/search.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
     { path: 'mascotas', component: MascotasComponent },
     { path: 'galeria', component: GaleriaComponent },
     { path: 'mascota/:id', component: CitasComponent},
+    { path: 'buscador/:nombrem', component: SearchComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
