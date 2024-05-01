@@ -1,4 +1,5 @@
 export interface Mascota {
+    nombre: string; 
     edad: string;
     color: string;
     raza: string;
