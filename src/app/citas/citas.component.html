@@ -7,7 +7,7 @@
             </div>
             <div class="col-md-8" style="height: 550px;">
                 <div class="card-body">
-                    <h5 class="card-title">Registrar una cita para {{this.mascota.raza}}</h5>
+                    <h5 class="card-title">Registrar una cita para {{this.mascota.nombre}}</h5>
                     <p class="card-text text-body-secondary">Fecha de hoy: {{FechaActual}} Hora: {{Hora}}</p>
                     <p class="card-text">
                         <mat-stepper [linear]="isLinear" #stepper>
@@ -49,11 +49,24 @@
                                     <mat-form-field>
                                         <mat-label>Elige una fecha</mat-label>
                                         <input matInput formControlName="thirdCtrl" [matDatepickerFilter]="myFilter"
-                                            [matDatepicker]="picker" [(ngModel)]="fechaCita" required>
+                                            [matDatepicker]="picker" [(ngModel)]="fechaCita"
+                                            (dateChange)="SeleccionFecha()" required>
                                         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                                         <mat-datepicker #picker></mat-datepicker>
                                     </mat-form-field>
                                     <br>
+                                    <div>
+                                        <label>Selecciona una hora de las disponibles</label><br>
+                                        <select formControlName="fifthCtrl" (change)="onCambio($event)" required>
+                                            @if (HorasDisp.length > 0) {
+                                            @for(item of HorasDisp; track $index){
+                                            <option value="{{item}}">{{item}}</option>
+                                            }
+                                            }@else {
+                                            <option value="">No hay horas disponibles</option>
+                                            }
+                                        </select>
+                                    </div>
                                     <div>
                                         <button mat-button matStepperPrevious>Atrás</button>
                                         <button mat-button matStepperNext>Siguiente</button>
@@ -64,13 +77,13 @@
                                 <ng-template matStepLabel>Confirmación</ng-template>
                                 <p>Presione el siguiente botón para confirmar su cita</p>
                                 <p>Fecha actual: {{this.FechaActual}}</p>
-                                <p>Hora: {{this.Hora}}</p>
+                                <p>Hora actual: {{this.Hora}}</p>
                                 <p>Nombre: {{this.name}}</p>
                                 <p>Teléfono: {{this.telefono}}</p>
                                 <p>Correo Electronico: {{this.correo}}</p>
                                 <p>Fecha de la cita: {{this.fechaCita.toLocaleDateString("es-MX")}}</p>
+                                <p>Hora de la cita: {{this.HoraCita}}</p>
                                 <div style="width: 100%; justify-content: space-between;">
-                                    <button mat-button matStepperPrevious>Back</button>
                                     <button mat-button (click)="GuardarLocalStorage()">ENVIAR</button>
                                 </div>
                             </mat-step>
