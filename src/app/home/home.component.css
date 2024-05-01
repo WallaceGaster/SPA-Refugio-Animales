@@ -97,16 +97,16 @@ section.hero{
     height: 100vh;
     margin-bottom: 20px;
 }
-.servicios {
+.servicios, .video {
     background-color: #042424;
     /* #072724 */
     color: white;
     padding: 100px 50px;
 }
-.servicios h3 {
+.servicios h3, .video h3 {
     color: #f1d684;
 }
-.descrip {
+.descrip, .video {
     font-size: 20px;
 }
 .apartado, .fila1 {
@@ -137,16 +137,23 @@ section.hero{
     object-fit: cover;
     width: 100%;
 }
+.video {
+    text-align: center;
+}
+.texto {
+    padding: 0 250px;
+}
+
 
 
 .contenedor-productos {
     margin: 0 auto;
     padding: 5%;
-    background-color: #f1d684;
+    background-color: #ffffff;
 }
 
 .tabla-alimentos {
-    background-color: #ddba51 !important;
+    background-color: antiquewhite !important;
     border: 1px black solid;
 }
 
