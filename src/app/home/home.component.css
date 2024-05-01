@@ -138,13 +138,20 @@ section.hero{
     width: 100%;
 }
 
+
 .contenedor-productos {
     margin: 0 auto;
-    width: 92%;
-
-    margin-top: 5%;
+    padding: 5%;
+    background-color: #f1d684;
 }
 
-th, td {
+.tabla-alimentos {
+    background-color: #ddba51 !important;
+    border: 1px black solid;
+}
+
+.tabla-alimentos th, .tabla-alimentos td {
     text-align: center !important;
+    border: 1px black solid;
+    padding: 10px;
 }
