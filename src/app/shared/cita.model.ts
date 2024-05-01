@@ -7,5 +7,6 @@ export interface Cita {
     Correo: string;
     Telefono: number;
     Mascota: Mascota;
-    FechaCita: Date;
+    FechaCita: string;
+    HoraCita: string;
 }

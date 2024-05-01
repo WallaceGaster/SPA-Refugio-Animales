@@ -30,7 +30,8 @@ export class CitasService {
       Correo: '',
       Telefono: 0,
       Mascota: this.mascota,
-      FechaCita: new Date
+      FechaCita: '',
+      HoraCita: ''
     }
   }
 }
