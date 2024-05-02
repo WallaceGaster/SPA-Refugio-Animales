@@ -59,18 +59,18 @@
                                         <label>Selecciona una hora de las disponibles</label><br>
                                         <select formControlName="fifthCtrl" (change)="onCambio($event)" required>
                                             @if (HorasDisp.length > 0) {
-                                            <option value="">Elige una hora</option>
+                                            <option value="Elige">Elige una hora</option>
                                             @for(item of HorasDisp; track $index){
                                             <option value="{{item}}">{{item}}</option>
                                             }
                                             }@else {
-                                            <option value="">No hay horas disponibles</option>
+                                            <option value="NoHay">No hay horas disponibles</option>
                                             }
                                         </select>
                                     </div>
                                     <div>
                                         <button mat-button matStepperPrevious>Atrás</button>
-                                        <button mat-button matStepperNext>Siguiente</button>
+                                        <button mat-button matStepperNext (click)="Validar()">Siguiente</button>
                                     </div>
                                 </form>
                             </mat-step>

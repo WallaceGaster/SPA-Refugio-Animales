@@ -105,6 +105,26 @@ export class CitasComponent {
     this.cita = this.citasService.nuevaCita();
   }
 
+  Validar(){
+    const HorasSel = this.secondFormGroup.get("fifthCtrl")?.value;
+    console.log(HorasSel);
+    if(!HorasSel || HorasSel === "NoHay"){
+      Swal.fire({
+        title: 'ERROR',
+        text: 'No hay horas disponibles ese dia',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      })
+    }else if(HorasSel === "Elige"){
+      Swal.fire({
+        title: 'ERROR',
+        text: 'Por favor, elija una hora disponible para su cita.',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      })
+    }
+  }
+
   updateErrorMessage() {
     if (this.email.hasError('required')) {
       this.errorMessage = 'Debes ingresar un valor';
