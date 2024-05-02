@@ -28,6 +28,7 @@ export class SearchComponent {
   constructor(private mascotaServicio: MascotaService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(params =>{
       this.nombrem=params['nombrem'];
+      console.log(this.nombrem)
       this.indice=this.mascotaServicio.searchMascota(this.nombrem);
       console.log(this.indice);
 

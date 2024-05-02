@@ -33,7 +33,13 @@ export class MascotaService {
   }
 
   searchMascota(nommas:string):number{
-    let index = this.arreglo.findIndex(p=> p.nombre == nommas);
-    return index;
+    
+    this.retornar().subscribe({
+      next: this.successRequest.bind(this),
+      error: (err) => {
+        console.log(err);
+      },
+    });
+    return this.arreglo.findIndex(p=> p.nombre === nommas);
   }
 }
