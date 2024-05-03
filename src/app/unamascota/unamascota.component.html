@@ -20,3 +20,30 @@
         </div>
     </div>
 </div>
+
+<h1 class="titulos">CITAS</h1>
+
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <ng-container *ngFor="let cita of recuperarCitas()">
+      <div class="col">
+        <div class="card h-100 shadow cita-card">
+          <div class="card-body">
+            <div class="info">
+              <p><strong>Nombre:</strong> {{ cita.Nombre }}</p>
+              <p><strong>Fecha de registro:</strong> {{ cita.FechaActual }}</p>
+              <p><strong>Hora de registro:</strong> {{ cita.Hora }}</p>
+              <p><strong>Correo:</strong> {{ cita.Correo }}</p>
+              <p><strong>Teléfono:</strong> {{ cita.Telefono }}</p>
+              <p><strong>Fecha de la cita:</strong> {{ cita.FechaCita }}</p>
+              <p><strong>Hora de la cita:</strong> {{ cita.HoraCita }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div> 
+
+

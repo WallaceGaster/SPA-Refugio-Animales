@@ -7,7 +7,7 @@ import { Mascota } from '../mascota';
   providedIn: 'root',
 })
 export class MascotaService {
-  urlAPI: string = 'https://mascotas-2.free.beeceptor.com/todos';
+  urlAPI: string = 'https://mascotas-52.free.beeceptor.com/';
   arreglo: Mascota[] = [];
 
   constructor(private http: HttpClient) {}
