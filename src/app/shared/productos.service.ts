@@ -17,9 +17,9 @@ export class ProductosService {
       analisis: "Cumple",
       grasa: "14.7",
       proteina: "25.4",
-      costoKG: "$146.69",
+      costoKG: "146.69", //Agregar $ con Pipe
       pesoPerro: "22 kg",
-      costoRacion: "$42.26"
+      costoRacion: "42.26" //Agregar $ con Pipe
     },
     {
       marca: "Hukanuba",
@@ -30,9 +30,9 @@ export class ProductosService {
       analisis: "Cumple",
       grasa: "16.3",
       proteina: "24.9",
-      costoKG: "$136.12",
+      costoKG: "136.12",
       pesoPerro: "22 kg",
-      costoRacion: "$29.95"
+      costoRacion: "29.95"
     },
     {
       marca: "ROYAL CANIN MAXI",
@@ -43,9 +43,9 @@ export class ProductosService {
       analisis: "Cumple",
       grasa: "17.1",
       proteina: "25.7",
-      costoKG: "$144.49",
+      costoKG: "144.49",
       pesoPerro: "34 kg",
-      costoRacion: "$55.92"
+      costoRacion: "55.92"
     },
     {
       marca: "PRO PLAN PURINA",
@@ -56,9 +56,9 @@ export class ProductosService {
       analisis: "No cumple con el contenido mínimo de proteína declarado",
       grasa: "15.8",
       proteina: "24.4",
-      costoKG: "$151",
+      costoKG: "151",
       pesoPerro: "34 kg",
-      costoRacion: "$58.89"
+      costoRacion: "58.89"
     },
     {
       marca: "Prairie Nature's Varlety",
@@ -69,9 +69,9 @@ export class ProductosService {
       analisis: "Cumple",
       grasa: "17.2",
       proteina: "25.4",
-      costoKG: "$99",
+      costoKG: "99",
       pesoPerro: "34 kg",
-      costoRacion: "$39.81"
+      costoRacion: "39.81"
     }
   ]
 
