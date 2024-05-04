@@ -54,8 +54,8 @@
             </mat-card-content>
             <mat-divider></mat-divider>
             <mat-card-actions class="action">
-              <button class="redes" mat-button><span class="blan">Estilista de gatos</span></button>
-              <button class="redes" mat-button><span class="blan">Cuidador de Animales</span></button>
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('Estilistagatos')">Estilista de gatos</span></button>
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('CuidadorAnimales')">Cuidador de Animales</span></button>
             </mat-card-actions>
           </mat-card>
           <!-- Card 1.2 -->
@@ -82,8 +82,8 @@
             </mat-card-content>
             <mat-divider></mat-divider>
             <mat-card-actions class="action">
-              <button class="redes" mat-button><span class="blan">Rescatista</span></button>
-              <button class="redes" mat-button><span class="blan">Director del Refugio</span></button>
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('Rescatista')">Rescatista</span></button>
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('Director')">Director del Refugio</span></button>
             </mat-card-actions>
           </mat-card>
           <!-- Card 1.3 -->
@@ -109,8 +109,8 @@
             </mat-card-content>
             <mat-divider></mat-divider>
             <mat-card-actions class="action">
-              <button class="redes" mat-button><span class="blan">Estilista de perros</span></button>
-              <button class="redes" mat-button><span class="blan">Coordinadora de Eventos y Recaudación de
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('Estilistaperros')">Estilista de perros</span></button>
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('Coordinadora')">Coordinadora de Eventos y Recaudación de
                   Fondos</span></button>
             </mat-card-actions>
           </mat-card>
@@ -141,8 +141,8 @@
             </mat-card-content>
             <mat-divider></mat-divider>
             <mat-card-actions class="action">
-              <button class="redes" mat-button><span class="blan">Veterinario</span></button>
-              <button class="redes" mat-button><span class="blan">Administrador de Recursos</span></button>
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('Veterinario')">Veterinario</span></button>
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('Administrador')">Administrador de Recursos</span></button>
             </mat-card-actions>
           </mat-card>
           <!-- Card 1.2 -->
@@ -168,8 +168,8 @@
             </mat-card-content>
             <mat-divider></mat-divider>
             <mat-card-actions class="action">
-              <button class="redes" mat-button><span class="blan">Rescatista</span></button>
-              <button class="redes" mat-button><span class="blan">Especialista en Comportamiento Animal</span></button>
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('Rescatista')">Rescatista</span></button>
+              <button class="redes" mat-button><span class="blan" (click)="asignarProfesion('Especialista')">Especialista en Comportamiento Animal</span></button>
             </mat-card-actions>
           </mat-card>
         </div>
@@ -192,6 +192,9 @@
       </button>
     </div>
   </div>
-  <h1>HAAAAAAAAAAAAAAAAAAAA</h1>
+  
+  <!-- Componente Hijo -->
+  <app-info [profesion]="profesion"></app-info>
+
   <script src="https://kit.fontawesome.com/93ee190ee2.js" crossorigin="anonymous"></script>
 </body>

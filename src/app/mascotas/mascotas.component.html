@@ -1,22 +1,23 @@
 <h1>Conoce un Nuevo Amigo</h1>
 <!-- <img src="../../assets/img/samoyedo.jpg" alt=""> -->
-<div class="card-group row row-cols-1 row-cols-lg-3 g-4">
+<div class="card-group row row-cols-1 row-cols-lg-3 g-4 contenedor">
     @for (m of array; track m; let i=$index) {
         <div class="col">
-            <div class="card" style="width: 23rem; height: 45rem;">
-                <img src="{{m.img}}" class="card-img-top" alt="...">
+            <div class="card" style="width: 23rem; height: 40rem;">
+                <img src="{{m.img}}" class="card-img-top" alt="..." height="250">
                 <div class="card-body">
                   <h5 class="card-title">{{m.nombre}}</h5>
                   <p class="card-text">{{m.raza}}, {{m.color}}</p>
                   <p class="card-text">{{m.tiempo}}</p>
-                  <p class="card-text">{{m.descrip}}</p>
+                  <p class="card-text descripcion">{{m.descrip}}</p>
                   <p class="card-text"><small class="text-muted">{{m.edad}}</small></p>
-                  <a class="btn btn-primary"  [routerLink]="['/mascota',i]">Quiero conocerte</a>
+                  <a class="btn conocer"  [routerLink]="['/mascota',i]">Quiero conocerte</a>
                 </div>
             </div>
         </div>
     }
-    <!-- <img src="assets/img/bulldog.jpg" alt=""> -->
+
+    <!-- <img src="../../assets/img/border.jpg" alt=""> -->
 
     <!-- edad: string;
     color: string;

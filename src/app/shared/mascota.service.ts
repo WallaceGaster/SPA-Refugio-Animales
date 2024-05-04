@@ -7,7 +7,8 @@ import { Mascota } from '../mascota';
   providedIn: 'root',
 })
 export class MascotaService {
-  urlAPI: string = 'https://mascotas-52.free.beeceptor.com/';
+  urlAPI: string = 'https://mascotas-3.free.beeceptor.com/todos';
+
   arreglo: Mascota[] = [];
 
   constructor(private http: HttpClient) {}
@@ -33,7 +34,6 @@ export class MascotaService {
   }
 
   searchMascota(nommas:string):number{
-    
     this.retornar().subscribe({
       next: this.successRequest.bind(this),
       error: (err) => {
@@ -42,4 +42,25 @@ export class MascotaService {
     });
     return this.arreglo.findIndex(p=> p.nombre === nommas);
   }
+
+  // async searchMascota(nommas: string): Promise<number> {
+  //   try {
+  //     await new Promise<void>((resolve, reject) => {
+  //       this.retornar().subscribe({
+  //         next: () => {
+  //           this.successRequest(this);
+  //           resolve();
+  //         },
+  //         error: (err) => {
+  //           console.log(err);
+  //           reject(err);
+  //         },
+  //       });
+  //     });
+  //     return this.arreglo.findIndex(p => p.nombre === nommas);
+  //   } catch (error) {
+  //     console.log(error);
+  //     return -1; 
+  //   }
+  // }
 }
