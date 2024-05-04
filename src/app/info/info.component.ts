@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, output } from '@angular/core';
 import { AboutComponent } from '../about/about.component';
 
 @Component({
@@ -9,9 +9,16 @@ import { AboutComponent } from '../about/about.component';
   styleUrl: './info.component.css'
 })
 export class InfoComponent {
-
-   @Input() selectedRole: string | undefined;
-
   constructor() { }
 
+  @Input() profesion: string="";
+
+  // descripciones: any [
+  //   {
+  //     profesion1: ""
+  //   },
+  //   {
+  //     profesion2: ""
+  //   }
+  // ];
 }
