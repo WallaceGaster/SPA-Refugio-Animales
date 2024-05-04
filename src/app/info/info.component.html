@@ -1,7 +1,82 @@
-<div>
+<div class="profesion-info">
+    <p>Aprende sobre nosotros</p>
     @if(profesion != "") {
-        <p>Profesión elegida: {{profesion}}</p>
+        <p class="profesion">Profesión elegida: {{profesion}}</p>
+        @if(profesion === 'Estilistagatos'){
+        <p>Un estilista de gatos es un profesional especializado en el cuidado estético de los felinos. Su trabajo incluye
+            el baño, cepillado, corte de uñas y peinado de gatos para mejorar su apariencia y bienestar. Además, pueden
+            proporcionar servicios adicionales como el desenredado del pelaje, la limpieza de oídos y la eliminación de
+            nudos. Los estilistas de gatos también pueden ofrecer consejos de cuidado y recomendaciones de productos para
+            mantener la salud y el aspecto de los felinos.</p>
+        }
 
-        
+        @if(profesion === 'CuidadorAnimales'){
+        <p>Un cuidador de animales es responsable del cuidado diario y bienestar de los animales bajo su supervisión. Esto
+            incluye la alimentación adecuada, el suministro de agua fresca, la limpieza de las jaulas o áreas de vivienda, y
+            la observación de cualquier signo de enfermedad o lesión. Los cuidadores también pueden proporcionar ejercicio y
+            enriquecimiento ambiental a los animales para promover su salud mental y física. Además, pueden ayudar en la
+            socialización de los animales y en la preparación para la adopción.</p>
+        }
+
+        @if(profesion === 'Rescatista'){
+        <p>Un rescatista es un individuo dedicado a salvar animales en situaciones de emergencia o peligro. Su trabajo puede
+            implicar el rescate de animales atrapados en lugares peligrosos, el tratamiento de animales heridos o enfermos,
+            y la intervención en casos de abuso o abandono. Los rescatistas también pueden colaborar con organizaciones de
+            rescate de animales para transportar y rehabilitar a los animales rescatados, proporcionándoles una segunda
+            oportunidad en un entorno seguro y amoroso.</p>
+        }
+
+        @if(profesion === 'Director'){
+        <p>Un director de refugio de animales es responsable de la gestión y supervisión general del refugio. Esto incluye
+            la elaboración de políticas y procedimientos operativos, la gestión del personal y los recursos financieros, y
+            la planificación estratégica para el bienestar de los animales y la comunidad. Los directores también pueden ser
+            la cara pública del refugio, interactuando con donantes, voluntarios y la comunidad en general para promover la
+            misión y los programas del refugio.</p>
+        }
+
+        @if(profesion === 'Estilistaperros'){
+        <p>Un estilista de perros es un profesional especializado en el cuidado estético de los perros. Su trabajo incluye
+            el baño, cepillado, corte de pelo y arreglo de uñas para mejorar la apariencia y comodidad de los perros.
+            Además, pueden ofrecer servicios adicionales como el recorte de pelo en áreas sensibles, la limpieza de orejas y
+            la aplicación de fragancias. Los estilistas de perros también pueden proporcionar asesoramiento sobre el cuidado
+            de la piel y el pelaje para mantener la salud y el aspecto de los perros.</p>
+        }
+
+        @if(profesion === 'Coordinadora'){
+        <p>Una coordinadora de eventos y recaudación de fondos es responsable de planificar y ejecutar eventos y campañas
+            destinados a recaudar fondos y crear conciencia sobre la causa animal. Esto puede incluir la organización de
+            eventos de recaudación de fondos, la coordinación de campañas de donación en línea, la participación en ferias y
+            festivales locales, y la colaboración con empresas y patrocinadores para obtener apoyo financiero. Las
+            coordinadoras también pueden trabajar en la promoción de la misión y los programas del refugio a través de
+            actividades de relaciones públicas y marketing.</p>
+        }
+
+        @if(profesion === 'Veterinario'){
+        <p>Un veterinario es un médico especializado en el diagnóstico, tratamiento y prevención de enfermedades y lesiones
+            en animales. Su trabajo incluye realizar exámenes físicos, diagnosticar enfermedades, administrar tratamientos
+            médicos y realizar cirugías cuando sea necesario. Los veterinarios también pueden proporcionar atención
+            preventiva, como vacunas, desparasitación y esterilización, así como asesoramiento sobre nutrición y cuidado
+            general. Su objetivo es garantizar la salud y el bienestar de los animales, así como promover la relación entre
+            las mascotas y sus dueños.</p>
+        }
+
+        @if(profesion === 'Administrador'){
+        <p>Un administrador de recursos en un refugio de animales es responsable de gestionar los recursos del refugio para
+            garantizar su uso eficiente y efectivo en apoyo de los animales y el equipo que los cuida. Esto puede incluir la
+            gestión del presupuesto del refugio, la supervisión de las compras y adquisiciones, el mantenimiento de
+            registros financieros precisos y la presentación de informes regulares sobre el estado financiero del refugio.
+            Los administradores también pueden estar involucrados en la contratación y supervisión del personal, así como en
+            el desarrollo de políticas y procedimientos operativos.</p>
+        }
+
+        @if(profesion === 'Especialista'){
+        <p>Un especialista en comportamiento animal es un profesional dedicado a comprender y abordar los problemas de
+            comportamiento en animales. Su trabajo incluye la evaluación del comportamiento de los animales, el desarrollo
+            de planes de tratamiento y rehabilitación, y la implementación de técnicas de modificación del comportamiento.
+            Los especialistas en comportamiento animal también pueden proporcionar asesoramiento a los propietarios de
+            mascotas sobre cómo manejar problemas de comportamiento en el hogar y mejorar la relación entre las mascotas y
+            sus familias.</p>
+        }
+
     }
 </div>

@@ -1,0 +1,22 @@
+.profesion-info {
+    background-color: #e6ffe6;
+    border: 2px solid #8c6d62;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.profesion-info p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+.profesion {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}
