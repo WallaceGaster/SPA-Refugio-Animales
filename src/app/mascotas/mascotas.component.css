@@ -1,0 +1,17 @@
+.conocer {
+    background-color: #4b744e;
+    color: white;
+    width: 100%;
+}
+.conocer:hover {
+    background-color: #3e6841;
+}
+.descripcion {
+    height: 130px;
+}
+.contenedor {
+    margin: 0;
+    margin: auto;
+    padding: 0 5%;
+    margin-bottom: 50px;
+}
