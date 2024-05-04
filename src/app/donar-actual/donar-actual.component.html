@@ -1,0 +1,66 @@
+<section>
+    <div class="example-container">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombre del titular de la tarjeta</mat-label>
+                        <input matInput placeholder="Nombre">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-hint>Nombre del titular de la tarjeta</mat-hint>
+                    </mat-form-field>
+                </td>
+                <td><mat-form-field appearance="outline" hintLabel="Máximo 3 numeros">
+                        <mat-label>CVV</mat-label>
+                        <input matInput #ccv type="number"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength="3" placeholder="000">
+                        <mat-hint align="end">{{ccv.value.length}}/3</mat-hint>
+                    </mat-form-field></td>
+            </tr>
+            <tr>
+                <td colspan="3"><mat-form-field appearance="outline" hintLabel="Máximo 16 números">
+                        <mat-label>Numero de la tarjeta</mat-label>
+                        <input matInput #tarjeta type="number"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength="16" placeholder="0000 0000 0000 0000">
+                        <mat-hint align="end">{{tarjeta.value.length}}/16</mat-hint>
+                    </mat-form-field></td>
+            </tr>
+            <tr>
+                <td>
+                   <mat-form-field appearance="outline">
+                    <mat-label>Fecha de expiración</mat-label>
+                    <input matInput [matDatepickerFilter]="myFilter"
+                        [matDatepicker]="picker" required>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field> 
+                </td>
+                <td colspan="2" style="text-align: center;"><img src="../../assets/img/cards.png" alt="Visa, Mastercard" height="80px" width="auto"></td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field floatLabel="always" class="InputMonto" appearance="outline" style="width: 100%;">
+                        <mat-label>Monto</mat-label>
+                        <input matInput type="number" class="example-right-align" placeholder="0" #nuevaDonacion [(ngModel)]="monto">
+                        <span matTextPrefix>$&nbsp;</span>
+                        <span matTextSuffix>.00</span>
+                    </mat-form-field>
+                </td>
+                <td colspan="2"><mat-form-field appearance="outline">
+                    <mat-label>Nombre público</mat-label>
+                    <input matInput placeholder="Nombre" [(ngModel)]="name">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>Nombre público (¡Agradecemos su apoyo!)</mat-hint>
+                </mat-form-field></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button (click)="addNewItem()" type="button" class="btn btn-primary">Hacer
+                        donación</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

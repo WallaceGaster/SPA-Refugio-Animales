@@ -1,0 +1,41 @@
+<section class="donar">
+    <br>
+    <div class="texto">
+        <h3>Donaciones</h3>
+        <h1>¡Ayúdanos a lograr nuestro objetivo!</h1>
+        <p class="descrip">Nuestro proposito es hacer la diferencia en los rescates a animales y darles la vida que se
+            merecen
+        </p>
+        <br>
+    </div>
+</section>
+<br>
+<app-donar-actual (nuevaDonacion)="addItem($event)"></app-donar-actual>
+<br>
+<section class="donar">
+    <br>
+    <div class="texto">
+        <h3>Ultimos donadores</h3>
+        <h1>¡Gracias a todos los que han ayudado a formar nuestro objetivo!</h1>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre público</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of items; track $index) {
+                <tr>
+                    <th>{{item.nombre}}</th>
+                    <td>{{item.monto | currency:'MXN'}}</td>
+                    <td>{{item.fecha}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+<br>

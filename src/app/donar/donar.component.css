@@ -1,0 +1,13 @@
+.donar{
+    width: 100%;
+    background-color: antiquewhite ;
+    text-align: center;
+}
+
+.texto {
+    padding: 0 250px;
+}
+
+.descrip, .donar {
+    font-size: 20px;
+}
