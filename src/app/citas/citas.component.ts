@@ -1,24 +1,13 @@
 import {
-  Component,
-  ElementRef,
-  Inject,
-  Input,
-  OnDestroy,
-  Optional,
-  Self,
-  ViewChild,
-  forwardRef,
+  Component
 } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MascotaService } from '../shared/mascota.service';
 import { Mascota } from '../mascota';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import {
-  MAT_FORM_FIELD,
-  MatFormField,
-  MatFormFieldControl,
-  MatFormFieldModule,
+  MatFormFieldModule
 } from '@angular/material/form-field';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import {
@@ -26,19 +15,13 @@ import {
   ReactiveFormsModule,
   FormControl,
   Validators,
-  FormBuilder,
-  FormGroup,
-  ControlValueAccessor,
-  NgControl,
-  AbstractControl,
+  FormBuilder
 } from '@angular/forms';
-import { Subject, merge } from 'rxjs';
+import { merge } from 'rxjs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
-import { FocusMonitor } from '@angular/cdk/a11y';
 import { MatSelectModule } from '@angular/material/select';
 import { Cita } from '../shared/cita.model';
 import { CitasService } from '../shared/citas.service';
@@ -96,7 +79,8 @@ export class CitasComponent {
     public mascotaService: MascotaService,
     public activatedRoute: ActivatedRoute,
     private _formBuilder: FormBuilder,
-    private citasService: CitasService
+    private citasService: CitasService,
+    private router: Router,
   ) {
     this.HorasDisp = ['10:00 AM', '12:00 PM', '2:00 PM', '4:00 PM', '6:00 PM'];
     this.activatedRoute.params.subscribe((params) => {
@@ -110,7 +94,7 @@ export class CitasComponent {
       this.Fecha.getFullYear();
     let hour = this.Fecha.getHours();
     let minutes = this.Fecha.getMinutes();
-    this.Hora = hour + ':' + minutes;
+    this.Hora = (hour >= 10 ? hour:'0'+hour) + ':' + (minutes >= 10 ? minutes:'0'+minutes);
 
     merge(this.email.statusChanges, this.email.valueChanges)
       .pipe(takeUntilDestroyed())
@@ -119,6 +103,26 @@ export class CitasComponent {
 
   ngOnInit() {
     this.cita = this.citasService.nuevaCita();
+  }
+
+  Validar(){
+    const HorasSel = this.secondFormGroup.get("fifthCtrl")?.value;
+    console.log(HorasSel);
+    if(!HorasSel || HorasSel === "NoHay"){
+      Swal.fire({
+        title: 'ERROR',
+        text: 'No hay horas disponibles ese dia',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      })
+    }else if(HorasSel === "Elige"){
+      Swal.fire({
+        title: 'ERROR',
+        text: 'Por favor, elija una hora disponible para su cita.',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      })
+    }
   }
 
   updateErrorMessage() {
@@ -187,9 +191,11 @@ export class CitasComponent {
     this.cita = this.citasService.nuevaCita();
     Swal.fire({
       title: 'Éxito!',
-      text: 'Tu operación fue exitosa.',
+      text: 'Se ha registrado tu cita correctamente',
       icon: 'success',
-      confirmButtonText: 'Genial',
+      confirmButtonText: '¡Genial!',
+    }).then(() => {
+      this.router.navigate(['/home']);
     });
   }
 }

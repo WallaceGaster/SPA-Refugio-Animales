@@ -1,0 +1,66 @@
+<div class="container">
+    <h2 [ngStyle]="estilosTitulo">
+        <i class="fas fa-paw"></i> Citas Anteriores <i class="fas fa-paw"></i>
+    </h2>
+    <div class="table-responsive text-center">
+      <table class="table table-striped-column table-bordered border-success-subtle mx-auto">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha actual</th>
+            <th>Hora</th>
+            <th>Correo</th>
+            <th>Mascota</th>
+            <th>Teléfono</th>
+            <th>Fecha de la cita</th>
+            <th>Hora de la cita</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cita of recuperarCitas()">
+            <td>{{ cita.Nombre }}</td>
+            <td>{{ cita.FechaActual }}</td>
+            <td>{{ cita.Hora }}</td>
+            <td>{{ cita.Correo }}</td>
+            <td>{{ cita.Mascota.nombre }}</td>
+            <td>{{ cita.Telefono }}</td>
+            <td>{{ cita.FechaCita }}</td>
+            <td>{{ cita.HoraCita }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <h2 [ngStyle]="estilosTitulo">
+        <i class="fas fa-paw"></i> Citas por cumplir <i class="fas fa-paw"></i>
+    </h2>
+    <div class="table-responsive text-center">
+      <table class="table table-bordered border-success-subtle mx-auto">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha actual</th>
+            <th>Hora</th>
+            <th>Correo</th>
+            <th>Mascota</th>
+            <th>Teléfono</th>
+            <th>Fecha de la cita</th>
+            <th>Hora de la cita</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cita of recuperarCitas()">
+            <td>{{ cita.Nombre }}</td>
+            <td>{{ cita.FechaActual }}</td>
+            <td>{{ cita.Hora }}</td>
+            <td>{{ cita.Correo }}</td>
+            <td>{{ cita.Mascota.nombre }}</td>
+            <td>{{ cita.Telefono }}</td>
+            <td>{{ cita.FechaCita }}</td>
+            <td>{{ cita.HoraCita }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

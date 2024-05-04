@@ -114,28 +114,58 @@
         @if(productosService.productos.length > 0) {
             <table class="tabla-alimentos">
 
-                <thead>
-                    <th>Marca</th>
-                    <th>ROYAL CANIN MEDIUM</th>
-                    <th>Hukanuba</th>
-                    <th>ROYAL CANIN MAXI</th>
-                    <th>PRO PLAN PURINA</th>
-                    <th>Prairie Nature's Varlety</th>
-                </thead>
-
-                <tbody>
-                    @for(producto of productosService.productos; track producto) {
-                        <tr>
-                            <th>{{producto.titulo}}</th>
-                            <td>{{producto.marca1}}</td>
-                            <td>{{producto.marca2}}</td>
-                            <td>{{producto.marca3}}</td>
-                            <td>{{producto.marca4}}</td>
-                            <td>{{producto.marca5}}</td>
-                        </tr>
-                    }                 
-                </tbody>
-
+                @for(nombre of titulosService.titulosLaterales; track nombre; let i=$index) {
+                    <tr>
+                    @for(producto of productosService.productos; track producto; let j=$index) {
+                        @switch(i) {
+                            @case (0) {
+                                <th *ngIf="j==0">{{nombre.titulo1}}</th>
+                                <th>{{producto.marca}}</th>
+                            }
+                            @case (1) {
+                                <th *ngIf="j==0">{{nombre.titulo2}}</th>
+                                <td>{{producto.denominacion}}</td>
+                            }
+                            @case (2) {
+                                <th *ngIf="j==0">{{nombre.titulo3}}</th>
+                                <td>{{producto.paisPresentacion}}</td>
+                            }
+                            @case (3) {
+                                <th *ngIf="j==0">{{nombre.titulo4}}</th>
+                                <td>{{producto.informacion}}</td>
+                            }
+                            @case (4) {
+                                <th *ngIf="j==0">{{nombre.titulo5}}</th>
+                                <td>{{producto.recomendacionesAAFCO}}</td>
+                            }
+                            @case (5) {
+                                <th *ngIf="j==0">{{nombre.titulo6}}</th>
+                                <td>{{producto.analisis}}</td>
+                            }
+                            @case (6) {
+                                <th *ngIf="j==0">{{nombre.titulo7}}</th>
+                                <td>{{producto.grasa | number: '1.0-1'}}</td>
+                            }
+                            @case (7) {
+                                <th *ngIf="j==0">{{nombre.titulo8}}</th>
+                                <td>{{producto.proteina | number: '1.0-1'}}</td>
+                            }
+                            @case (8) {
+                                <th *ngIf="j==0">{{nombre.titulo9}}</th>
+                                <td>{{producto.costoKG | currency:'$'}}</td>
+                            }
+                            @case (9) {
+                                <th *ngIf="j==0">{{nombre.titulo10}}</th>
+                                <td>{{producto.pesoPerro}}</td>
+                            }
+                            @case (10) {
+                                <th *ngIf="j==0">{{nombre.titulo11}}</th>
+                                <td>{{producto.costoRacion | currency:'$'}}</td>
+                            }
+                        }
+                    }    
+                    </tr>
+                }
             </table>
         }
         @else {
@@ -153,6 +183,5 @@
     <div>
         <iframe width="800" height="450" [src]="video | domseguro: 'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-inpicture" allowfullscreen> </iframe>
     </div>
-
 
 </section>

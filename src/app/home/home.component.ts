@@ -12,7 +12,7 @@ import { DomseguroPipe } from '../domseguro.pipe';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  video:string="u0XHVssfsYM";
+  video: string="u0XHVssfsYM"; 
 
-  constructor(public productosService: ProductosService) {}
+  constructor(public productosService: ProductosService, public titulosService: ProductosService) {}
 }

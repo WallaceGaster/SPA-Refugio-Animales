@@ -1,0 +1,13 @@
+<h1>haaaaaaaaaaaa</h1>
+
+<div *NgIf="selectedRole">
+    <h2>Información sobre el rol seleccionado: {{ selectedRole }}</h2>
+    <div *NgIf="selectedRole === 'Estilistagatos'">
+        <p>El estilista de gatos es responsable de...</p>
+        <p>...</p>
+    </div>
+    <div *NgIf="selectedRole === 'CuidadorAnimales'">
+        <p>El cuidador de animales se encarga de...</p>
+        <p>...</p>
+    </div>
+</div>
