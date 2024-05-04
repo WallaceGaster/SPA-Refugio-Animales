@@ -1,0 +1,57 @@
+.titulo>div {
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+    height: 200px;
+    background-image: linear-gradient(rgba(142, 219, 149, 0.411), rgba(0, 0, 0, 0.0));
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #3e6841;
+}
+  
+.titulo h1, .titulo h2 {
+    text-align: center;
+    margin: 0;
+    color: #3e6841;
+}
+  
+.titulo h1 {
+    font-size: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
+
+#componentes {
+    text-align: center;
+}
+
+#componentes h1 {
+    background-color: #3e6841;
+    width: 45%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+
+#componentes div {
+    margin-bottom: 40px;
+}
+#componentes {
+    width: 90%;
+    margin: 0 auto;
+}
+.card {
+    box-shadow: 7px 7px 0px 0px rgba(219,219,219,1);
+}
+/* 
+body {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://img.freepik.com/vector-gratis/fondo-pantalla-negro-fondo-hexagonal-3d_1017-38061.jpg?t=st=1709920348~exp=1709923948~hmac=6bc352eb01b036592ce42c55493d07e5b24264c7ebd899aefc2c3d3927b88661&w=740);
+} */
