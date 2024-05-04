@@ -12,13 +12,10 @@ import { InfoComponent } from '../info/info.component';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
+  profesion: string = "";  
 
-  selectedRole: string | undefined; 
-
-  @Output() roleSelected = new EventEmitter<string>();
-
-  emitRole(role: string) {
-    this.roleSelected.emit(role);
+  asignarProfesion(value: string) {
+    this.profesion = value;
   }
 
 }
