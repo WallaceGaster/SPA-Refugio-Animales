@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Mascota } from '../mascota';
 import { MascotaService } from '../shared/mascota.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-mascotas',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './mascotas.component.html',
   styleUrl: './mascotas.component.css'
 })
