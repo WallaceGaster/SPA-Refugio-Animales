@@ -29,7 +29,7 @@ export class SearchComponent {
     this.activatedRoute.params.subscribe(params =>{
       this.nombrem=params['nombrem'];
       console.log(this.nombrem)
-      this.indice=this.mascotaServicio.searchMascota(this.nombrem);
+      this.indice = this.mascotaServicio.searchMascota(this.nombrem);
       console.log(this.indice);
 
       if(this.indice != -1) {
