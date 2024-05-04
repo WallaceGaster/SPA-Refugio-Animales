@@ -1,13 +1,13 @@
 <div class="container">
     <h2 [ngStyle]="estilosTitulo">
-        <i class="fas fa-paw"></i> Citas Anteriores <i class="fas fa-paw"></i>
+        <i class="fas fa-paw"></i> Citas Completadas <i class="fas fa-paw"></i>
     </h2>
     <div class="table-responsive text-center">
-      <table class="table table-striped-column table-bordered border-success-subtle mx-auto">
+      <table class="table" [ngClass]="{'citas-anteriores': true}">
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Fecha actual</th>
+            <th>Fecha</th>
             <th>Hora</th>
             <th>Correo</th>
             <th>Mascota</th>
@@ -17,7 +17,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cita of recuperarCitas()">
+          <tr *ngFor="let cita of citasAnteriores()">
             <td>{{ cita.Nombre }}</td>
             <td>{{ cita.FechaActual }}</td>
             <td>{{ cita.Hora }}</td>
@@ -30,16 +30,16 @@
         </tbody>
       </table>
     </div>
-  
+  <br>
     <h2 [ngStyle]="estilosTitulo">
         <i class="fas fa-paw"></i> Citas por cumplir <i class="fas fa-paw"></i>
     </h2>
     <div class="table-responsive text-center">
-      <table class="table table-bordered border-success-subtle mx-auto">
+      <table class="table" [ngClass]="{'citas-por-cumplir': true}">
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Fecha actual</th>
+            <th>Fecha</th>
             <th>Hora</th>
             <th>Correo</th>
             <th>Mascota</th>
@@ -49,7 +49,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cita of recuperarCitas()">
+          <tr *ngFor="let cita of citasPosteriores()">
             <td>{{ cita.Nombre }}</td>
             <td>{{ cita.FechaActual }}</td>
             <td>{{ cita.Hora }}</td>

@@ -12,8 +12,7 @@ import { Cita } from '../shared/cita.model';
 })
 export class ReporteComponent implements OnInit{
   obcita!: Cita[];
-  citas: any[] = [];
-  fechaActual: Date = new Date();
+  FechaActual: Date = new Date();
 
   constructor(private citasService: CitasService) {}
 
@@ -21,17 +20,33 @@ export class ReporteComponent implements OnInit{
     this.recuperarCitas();
   }
 
-  recuperarCitas(): any[] {
+  recuperarCitas(): void {
     this.obcita = this.citasService.getCitas();
-    return this.obcita; 
+    console.log(this.obcita); 
   }  
 
   citasAnteriores(): Cita[] {
-    return this.citas.filter(cita => new Date(cita.FechaCita) < this.fechaActual);
+    const fechaActual = new Date(this.FechaActual); 
+    return this.obcita.filter(cita => {
+      const fechaCita = this.convertirACadena(cita.FechaCita);
+      return fechaCita < fechaActual; 
+    });
   }
 
   citasPosteriores(): Cita[] {
-    return this.citas.filter(cita => new Date(cita.FechaCita) >= this.fechaActual);
+    const fechaActual = new Date(this.FechaActual); 
+    return this.obcita.filter(cita => {
+      const fechaCita = this.convertirACadena(cita.FechaCita);
+      return fechaCita >= fechaActual; 
+    });
+  }
+
+  convertirACadena(fecha: string): Date {
+    const partes = fecha.split('/');
+    const dia = parseInt(partes[0]);
+    const mes = parseInt(partes[1]) - 1; 
+    const anio = parseInt(partes[2]);
+    return new Date(anio, mes, dia);
   }
 
 

@@ -1,4 +1,57 @@
+
 .container{
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 20px;
+    
 }
+
+  .citas-anteriores td {
+    border-radius: 4px;
+    border-color: #85962a; 
+  }
+  
+  .citas-anteriores th {
+    color: #6d7c17; 
+    color: white;
+  }
+
+  .citas-por-cumplir td {
+    border-color: #99ff99; 
+    border-radius: 4px;
+  }
+  
+  .citas-por-cumplir th {
+    color: white;
+  }
+  
+  .table {
+    border-style: solid;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    border: 1px solid #4CAF50; 
+    border-radius: 10px; 
+    overflow: hidden;  /* permite redondear la tabla quitar para ver bordes externos*/
+    border-bottom: #4CAF50;
+  }
+
+  .table td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #18860a;
+    border-right: 1px solid #18860a;
+  }
+  
+  .table th {
+    background-color: #206d2c;
+    border-right: white;
+  }
+
+  .table tbody tr:hover {
+    background-color: #c3ddad;
+  }
+  
+  .table td:hover {
+    background-color: #80ce79;
+  }
+  
