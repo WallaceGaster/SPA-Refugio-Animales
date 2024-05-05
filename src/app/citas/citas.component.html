@@ -59,12 +59,12 @@
                                         <label>Selecciona una hora de las disponibles</label><br>
                                         <select formControlName="fifthCtrl" (change)="onCambio($event)" required>
                                             @if (HorasDisp.length > 0) {
-                                            <option value="Elige">Elige una hora</option>
+                                            <option value="">Elige una hora</option>
                                             @for(item of HorasDisp; track $index){
                                             <option value="{{item}}">{{item}}</option>
                                             }
                                             }@else {
-                                            <option value="NoHay">No hay horas disponibles</option>
+                                            <option value="">No hay horas disponibles</option>
                                             }
                                         </select>
                                     </div>

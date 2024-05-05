@@ -108,14 +108,14 @@ export class CitasComponent {
   Validar(){
     const HorasSel = this.secondFormGroup.get("fifthCtrl")?.value;
     console.log(HorasSel);
-    if(!HorasSel || HorasSel === "NoHay"){
+    if(!HorasSel || HorasSel === "" && this.HorasDisp.length > 0){
       Swal.fire({
         title: 'ERROR',
         text: 'No hay horas disponibles ese dia',
         icon: 'error',
         confirmButtonText: 'Ok',
       })
-    }else if(HorasSel === "Elige"){
+    }else if(!HorasSel || HorasSel === ""){
       Swal.fire({
         title: 'ERROR',
         text: 'Por favor, elija una hora disponible para su cita.',
