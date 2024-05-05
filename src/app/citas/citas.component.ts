@@ -111,14 +111,14 @@ export class CitasComponent {
     if(!HorasSel || HorasSel === "" && this.HorasDisp.length > 0){
       Swal.fire({
         title: 'ERROR',
-        text: 'No hay horas disponibles ese dia. Por favor, elija otro dia.',
+        text: 'Por favor, elija una hora disponible para su cita.',
         icon: 'error',
         confirmButtonText: 'Ok',
       })
     }else if(!HorasSel || HorasSel === ""){
       Swal.fire({
         title: 'ERROR',
-        text: 'Por favor, elija una hora disponible para su cita.',
+        text: 'No hay horas disponibles ese dia. Por favor, elija otro dia.',
         icon: 'error',
         confirmButtonText: 'Ok',
       })
